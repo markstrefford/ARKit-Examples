@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7A657623D884840062689A /* Portal.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A657523D884840062689A /* Portal.scnassets */; };
 		0BA4834B1F585DA000BD5DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4834A1F585DA000BD5DDA /* AppDelegate.swift */; };
 		0BA4834D1F585DA000BD5DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4834C1F585DA000BD5DDA /* ViewController.swift */; };
 		0BA483501F585DA000BD5DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA4834E1F585DA000BD5DDA /* Main.storyboard */; };
 		0BA483521F585DA000BD5DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA483511F585DA000BD5DDA /* Assets.xcassets */; };
 		0BA483551F585DA000BD5DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA483531F585DA000BD5DDA /* LaunchScreen.storyboard */; };
-		0BA4835F1F58675E00BD5DDA /* Portal.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0BA4835E1F58675E00BD5DDA /* Portal.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B7A657523D884840062689A /* Portal.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Portal.scnassets; sourceTree = "<group>"; };
 		0BA483471F585DA000BD5DDA /* AR-Portal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Portal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA4834A1F585DA000BD5DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA4834C1F585DA000BD5DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +24,6 @@
 		0BA483511F585DA000BD5DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BA483541F585DA000BD5DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BA483561F585DA000BD5DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BA4835E1F58675E00BD5DDA /* Portal.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Portal.scn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				0BA483511F585DA000BD5DDA /* Assets.xcassets */,
 				0BA483531F585DA000BD5DDA /* LaunchScreen.storyboard */,
 				0BA483561F585DA000BD5DDA /* Info.plist */,
-				0BA4835E1F58675E00BD5DDA /* Portal.scn */,
+				0B7A657523D884840062689A /* Portal.scnassets */,
 			);
 			path = "AR-Portal";
 			sourceTree = "<group>";
@@ -127,8 +127,8 @@
 			files = (
 				0BA483551F585DA000BD5DDA /* LaunchScreen.storyboard in Resources */,
 				0BA483521F585DA000BD5DDA /* Assets.xcassets in Resources */,
-				0BA4835F1F58675E00BD5DDA /* Portal.scn in Resources */,
 				0BA483501F585DA000BD5DDA /* Main.storyboard in Resources */,
+				0B7A657623D884840062689A /* Portal.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
