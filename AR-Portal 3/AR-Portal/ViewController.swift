@@ -56,11 +56,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func addPlane(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
         child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+        child?.renderingOrder = 200
     }
     
     func addWalls(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
         child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+        child?.renderingOrder = 200
+        if let mask = child?.childNode(withName: "mask", recursively: false) {
+            mask.geometry?.firstMaterial?.transparency = 0.000001
+        }
     }
     
     override func didReceiveMemoryWarning() {
