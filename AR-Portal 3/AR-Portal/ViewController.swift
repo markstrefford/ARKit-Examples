@@ -2,8 +2,11 @@
 //  ViewController.swift
 //  AR-Portal
 //
-//  Created by Rayan Slim on 2017-08-31.
-//  Copyright © 2017 Rayan Slim. All rights reserved.
+//  Based on code by Rayan Slim on 2017-08-31.
+//  Modified for Colisseum experience by Mark Strefford (c) Timelaps AI Limited 2020
+//
+//  Colisseum panoramic image by Emil Persson, aka Humus and licensed under a Creative Commons Attribution 3.0 Unported License.
+//  http://creativecommons.org/licenses/by/3.0/
 //
 
 import UIKit
@@ -15,7 +18,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+//        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.configuration.planeDetection = .horizontal
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
@@ -44,24 +47,33 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let planeZposition = transform.columns.3.z
         portalNode.position = SCNVector3(planeXposition, planeYposition, planeZposition)
         self.sceneView.scene.rootNode.addChildNode(portalNode)
-        self.addPlane(nodeName: "roof", portalNode: portalNode, imageName: "top")
-        self.addPlane(nodeName: "floor", portalNode: portalNode, imageName: "bottom")
-        self.addWalls(nodeName: "sideWallA", portalNode: portalNode, imageName: "sideA")
-        self.addWalls(nodeName: "sideWallB", portalNode: portalNode, imageName: "sideB")
-        self.addWalls(nodeName: "sideDoorA", portalNode: portalNode, imageName: "sideDoorA")
-        self.addWalls(nodeName: "sideDoorB", portalNode: portalNode, imageName: "sideDoorB")
-        self.addWalls(nodeName: "backWall", portalNode: portalNode, imageName: "back")
+//        self.addPlane(nodeName: "roof", portalNode: portalNode, imageName: "top")
+//        self.addPlane(nodeName: "floor", portalNode: portalNode, imageName: "bottom")
+//        self.addWalls(nodeName: "sideWallA", portalNode: portalNode, imageName: "sideA")
+//        self.addWalls(nodeName: "sideWallB", portalNode: portalNode, imageName: "sideB")
+//        self.addWalls(nodeName: "sideDoorA", portalNode: portalNode, imageName: "sideDoorA")
+//        self.addWalls(nodeName: "sideDoorB", portalNode: portalNode, imageName: "sideDoorB")
+//        self.addWalls(nodeName: "backWall", portalNode: portalNode, imageName: "back")
+        self.addPlane(nodeName: "roof", portalNode: portalNode, imageName: "posy")
+        self.addPlane(nodeName: "floor", portalNode: portalNode, imageName: "negy")
+        self.addWalls(nodeName: "sideWallA", portalNode: portalNode, imageName: "posx")
+        self.addWalls(nodeName: "sideWallB", portalNode: portalNode, imageName: "negx")
+        self.addWalls(nodeName: "sideDoorA", portalNode: portalNode, imageName: "negz-a")
+        self.addWalls(nodeName: "sideDoorB", portalNode: portalNode, imageName: "negz-b")
+        self.addWalls(nodeName: "backWall", portalNode: portalNode, imageName: "posz")
     }
     
     func addPlane(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
-        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+//        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).jpg")
         child?.renderingOrder = 200
     }
     
     func addWalls(nodeName: String, portalNode: SCNNode, imageName: String) {
         let child = portalNode.childNode(withName: nodeName, recursively: true)
-        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+//        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).png")
+        child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "Portal.scnassets/\(imageName).jpg")
         child?.renderingOrder = 200
         if let mask = child?.childNode(withName: "mask", recursively: false) {
             mask.geometry?.firstMaterial?.transparency = 0.000001
